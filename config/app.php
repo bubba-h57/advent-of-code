@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'Aoc',
+    'name' => 'Advent Of Code',
 
     /*
     |--------------------------------------------------------------------------
@@ -57,4 +57,9 @@ return [
         App\Providers\AppServiceProvider::class,
     ],
 
+
+    'session_token' => env('AOC_SESSION_TOKEN'),
+    'aoc_domain' => env('AOC_DOMAIN', 'adventofcode.com'),
+    'aoc_endpoint' => env('AOC_ENDPOINT', 'https://%s/%s/day/%s/input'),
+    'aoc_cache_key_format' => '%d %d Input',
 ];
