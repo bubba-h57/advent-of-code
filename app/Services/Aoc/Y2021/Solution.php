@@ -1,10 +1,13 @@
 <?php
 namespace App\Services\Aoc\Y2021;
 
+use Illuminate\Console\Concerns\InteractsWithIO;
 use Illuminate\Console\OutputStyle;
 
 class Solution
 {
+    use InteractsWithIO;
+
     /**
      * Day of Advent
      * @var int
@@ -15,36 +18,7 @@ class Solution
      * @var int
      */
     protected int $year = 2021;
-    /**
-     * Console Output
-     * @var null|OutputStyle
-     */
-    protected ?OutputStyle $output = null;
 
-    /**
-     * Helper function for output
-     * @param string $message
-     * @return void
-     */
-    public function info(string $message): void
-    {
-        if (empty($this->output)) {
-            return;
-        }
-
-        $this->output->info($message);
-    }
-
-    /**
-     * Setter/Getter for output
-     * @param null|OutputStyle $output
-     * @return OutputStyle
-     */
-    public function output(?OutputStyle $output=null): Solution
-    {
-        $this->output = $output ?? $this->output;
-        return $this;
-    }
 
     /**
      * Solution
