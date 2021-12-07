@@ -1,19 +1,14 @@
 <?php
 namespace App\Services\Aoc\Y2021\D7;
 
-use App\Services\Aoc\Y2021\Solution;
-use App\Services\Helpers;
-use Illuminate\Support\Facades\Cache;
-
-class PartTwo extends Solution
+class PartTwo extends PartOne
 {
-    protected int $day = 1;
-    protected int $year = 2021;
+    protected bool $partB = true;
 
-    
     public function solve(): bool
     {
-        $input = Cache::get(Helpers::key($this->year, $this->day));
+        $this->handle();
+        $this->info(sprintf('Fuel Spent for Alignment: %s', $this->fuel));
         return true;
     }
 }
