@@ -1,19 +1,12 @@
 <?php
 namespace App\Services\Aoc\Y2021\D6;
 
-use App\Services\Aoc\Y2021\Solution;
-use App\Services\Helpers;
-use Illuminate\Support\Facades\Cache;
-
-class PartTwo extends Solution
+class PartTwo extends PartOne
 {
-    protected int $day = 1;
-    protected int $year = 2021;
-
-    
     public function solve(): bool
     {
-        $input = Cache::get(Helpers::key($this->year, $this->day));
+        $result = $this->countFish(256);
+        $this->info(sprintf('%s Lantern Fish after 256 days.', number_format($result)));
         return true;
     }
 }
